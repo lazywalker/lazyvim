@@ -185,6 +185,7 @@ if get(g:, 'lazyvim_enable_folding', 1)
 endif
 
 set background=dark         " Assume dark background
+colorscheme solarized
 set cursorline              " Highlight current line
 set fileformats=unix,dos,mac        " Use Unix as the standard file type
 set number                  " Line numbers on
