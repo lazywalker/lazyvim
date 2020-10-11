@@ -237,9 +237,6 @@ endif
 
         " Basic {
           if get(g:, 'lazyvim_basic_key_mapping', 1)
-            " map jk as <esc> 
-            inoremap jk <esc>
-
             " Add <slient> for the rhs is Ex-cmd as some GUI app, e.g., gnvim,
             " flashes when you use these mappings.
             " Quit normal mode
@@ -247,6 +244,7 @@ endif
             nnoremap <silent> <Leader>Q  :qa!<CR>
             nnoremap <silent> <Leader>tr :NERDTreeToggle<CR>
             nnoremap <silent> <Leader>tg :GitGutterToggle<CR>
+            nnoremap <silent> <Leader>sf :CtrlSF 
             " Move half page faster
             nnoremap <Leader>d  <C-d>
             nnoremap <Leader>u  <C-u>
