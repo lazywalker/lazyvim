@@ -95,7 +95,7 @@ set splitbelow     " Puts new split windows to the bottom of the current
 set autowrite      " Automatically write a file when leaving a modified buffer
 set mousehide      " Hide the mouse cursor while typing
 set hidden         " Allow buffer switching without saving
-"jset t_Co=256       " Use 256 colors
+"set t_Co=256       " Use 256 colors
 set termguicolors  " enable true color
 set ruler          " Show the ruler
 set showcmd        " Show partial commands in status line and Selected characters/lines in visual mode
@@ -155,6 +155,9 @@ command! W w !sudo tee % > /dev/null
         let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
         let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
         let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+        " True color fixed
+        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     endif
 
     " inside neovim
@@ -185,7 +188,7 @@ if get(g:, 'lazyvim_enable_folding', 1)
 endif
 
 set background=dark         " Assume dark background
-colorscheme solarized
+colorscheme solarized8_flat
 set cursorline              " Highlight current line
 set fileformats=unix,dos,mac        " Use Unix as the standard file type
 set number                  " Line numbers on
