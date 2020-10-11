@@ -23,12 +23,12 @@ call plug#begin('~/.vim/plug')
     Plug 'SirVer/ultisnips' " 预定义模板
     Plug 'honza/vim-snippets' " 模板库
     Plug 'Valloric/YouCompleteMe' " 补全插件
-    Plug 'tpope/vim-fugitive' " 显示git branch
+    "Plug 'tpope/vim-fugitive' " 显示git branch
     Plug 'alvan/vim-closetag' " html自动补全
     Plug 'jiangmiao/auto-pairs' " 符号自动补全
     Plug 'godlygeek/tabular' " 按符号自动对齐如: Tab \= , : Tab \|
     Plug 'iamcco/mathjax-support-for-mkdp' " mardown实时预览辅助插件
-    Plug 'iamcco/markdown-preview.vim' " mardown实时预览插件
+    "Plug 'iamcco/markdown-preview.vim' " mardown实时预览插件
     Plug 'mzlogin/vim-markdown-toc', { 'for':  'md' }
     Plug 'plasticboy/vim-markdown', { 'for':  'md' }
     Plug 'kien/ctrlp.vim' " CtrlP文件搜索
@@ -49,6 +49,8 @@ set statusline+=\ %{getcwd()}
 set statusline+=\ [%{&ff}:%{&fenc}:%Y]
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 
+let g:vim_markdown_conceal_code_blocks = 0
+let g:ctrlsf_backend = "ag"
 let g:tagbar_ctags_bin = "/usr/local/bin/ctags"
 let g:indentLine_enabled = 1
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
