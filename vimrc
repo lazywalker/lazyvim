@@ -43,7 +43,7 @@ function Version ()
     return system("grep -o '^v[0-9\.]*' ~/.vim/version|tr -d '\n'")
 endfunction
 set laststatus=2
-set statusline=(%{Version()})\ \ %<%f
+set statusline=(Lazy.%{Version()})\ \ %<%f
 set statusline+=%w%h%m%r
 set statusline+=\ %{getcwd()}
 set statusline+=\ [%{&ff}:%{&fenc}:%Y]
