@@ -18,7 +18,7 @@ let g:netrw_liststyle = 3
 "2 - open files in a new vertical split
 "3 - open files in a new tab
 "4 - open in previous window
-let g:netrw_browse_split = 4
+let g:netrw_browse_split = 3
 let g:netrw_altv = 1
 let g:netrw_winsize = 15
 "augroup ProjectDrawer
@@ -29,6 +29,7 @@ let g:netrw_winsize = 15
 function! ToggleVExplorer()
     if exists("t:expl_buf_num")
         let expl_win_num = bufwinnr(t:expl_buf_num)
+        let g:netrw_browse_split = 3
         if expl_win_num != -1
             let cur_win_nr = winnr()
             exec expl_win_num . 'wincmd w'
@@ -41,6 +42,7 @@ function! ToggleVExplorer()
     else
         exec '1wincmd w'
         Vexplore
+        let g:netrw_browse_split = 4
         let t:expl_buf_num = bufnr("%")
     endif
 endfunction
