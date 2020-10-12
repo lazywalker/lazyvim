@@ -57,21 +57,21 @@ call plug#begin('~/.vim/plug')
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     Plug 'xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
     Plug 'airblade/vim-gitgutter'
+    "Plug 'tpope/vim-fugitive' " 显示git branch
     Plug 'yggdroot/indentLine'
     Plug 'scrooloose/nerdcommenter' " 代码注释
-    Plug 'dyng/ctrlsf.vim' " 搜索功能
     "Plug 'SirVer/ultisnips' " 预定义模板
     "Plug 'honza/vim-snippets' " 模板库
     Plug 'Valloric/YouCompleteMe' " 补全插件
-    "Plug 'tpope/vim-fugitive' " 显示git branch
     Plug 'alvan/vim-closetag' " html自动补全
-    "Plug 'jiangmiao/auto-pairs' " 符号自动补全
+    Plug 'lazywalker/auto-pairs' " 符号自动补全
     Plug 'godlygeek/tabular' " 按符号自动对齐如: Tab \= , : Tab \|
     "Plug 'iamcco/mathjax-support-for-mkdp' " mardown实时预览辅助插件
     "Plug 'iamcco/markdown-preview.vim' " mardown实时预览插件
     "Plug 'mzlogin/vim-markdown-toc', { 'for':  'md' }
     Plug 'plasticboy/vim-markdown', { 'for':  'md' }
-    Plug 'kien/ctrlp.vim' " CtrlP文件搜索
+    Plug 'kien/ctrlp.vim' " CtrlP文件名搜索
+    Plug 'dyng/ctrlsf.vim' " 全文搜索功能
     Plug 'w0rp/ale' " 语法提示
     Plug 'majutsushi/tagbar' " tagbar显示文件大纲
 call plug#end()
