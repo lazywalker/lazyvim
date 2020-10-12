@@ -53,20 +53,21 @@ autocmd FileType markdown set wrap
 call plug#begin('~/.vim/plug')
     " On-demand loading
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    Plug 'xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
     Plug 'airblade/vim-gitgutter'
-    Plug 'Yggdroot/indentLine'
+    Plug 'yggdroot/indentLine'
     Plug 'scrooloose/nerdcommenter' " 代码注释
     Plug 'dyng/ctrlsf.vim' " 搜索功能
-    Plug 'SirVer/ultisnips' " 预定义模板
-    Plug 'honza/vim-snippets' " 模板库
+    "Plug 'SirVer/ultisnips' " 预定义模板
+    "Plug 'honza/vim-snippets' " 模板库
     Plug 'Valloric/YouCompleteMe' " 补全插件
     "Plug 'tpope/vim-fugitive' " 显示git branch
     Plug 'alvan/vim-closetag' " html自动补全
-    Plug 'jiangmiao/auto-pairs' " 符号自动补全
+    "Plug 'jiangmiao/auto-pairs' " 符号自动补全
     Plug 'godlygeek/tabular' " 按符号自动对齐如: Tab \= , : Tab \|
-    Plug 'iamcco/mathjax-support-for-mkdp' " mardown实时预览辅助插件
+    "Plug 'iamcco/mathjax-support-for-mkdp' " mardown实时预览辅助插件
     "Plug 'iamcco/markdown-preview.vim' " mardown实时预览插件
-    Plug 'mzlogin/vim-markdown-toc', { 'for':  'md' }
+    "Plug 'mzlogin/vim-markdown-toc', { 'for':  'md' }
     Plug 'plasticboy/vim-markdown', { 'for':  'md' }
     Plug 'kien/ctrlp.vim' " CtrlP文件搜索
     Plug 'w0rp/ale' " 语法提示
@@ -80,15 +81,16 @@ function Version ()
     return system("grep -o '^v[0-9\.]*' ~/.vim/version|tr -d '\n'")
 endfunction
 set laststatus=2
-set statusline=(Lazy.%{Version()})\ \ %<%f
+set statusline=[Lazy.%{Version()}]\ \ %<%f
 set statusline+=%w%h%m%r
 set statusline+=\ %{getcwd()}
 set statusline+=\ [%{&ff}:%{&fenc}:%Y]
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 
+let NERDTreeShowHidden=1
 let g:vim_markdown_conceal_code_blocks = 0
-let g:ctrlsf_backend = "ag"
-let g:tagbar_ctags_bin = "/usr/local/bin/ctags"
+let g:ctrlsf_backend = "ag" "macOS: brew install ag / debian sudo apt install silversearcher-ag
+let g:tagbar_ctags_bin = "ctags"
 let g:indentLine_enabled = 1
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
@@ -281,27 +283,29 @@ endif
             nnoremap <silent> <Leader>Q  :qa!<CR>
             nnoremap <silent> <Leader>tr :NERDTreeToggle<CR>
             nnoremap <silent> <Leader>tg :GitGutterToggle<CR>
-            nnoremap <silent> <Leader>sf :CtrlSF 
+            " CtrlSF mapping
+            nmap     <Leader>sf <Plug>CtrlSFPrompt
+            nnoremap <silent> <Leader>tsf :CtrlSFToggle<CR>
             nnoremap <silent> <Leader>te :call ToggleVExplorer()<CR>
+            nnoremap <silent> <Leader>tb :Tagbar<CR>
+
             " Move half page faster
             nnoremap <Leader>d  <C-d>
             nnoremap <Leader>u  <C-u>
             " Insert mode shortcut
-            inoremap <C-h> <BS>
             inoremap <C-j> <Down>
             inoremap <C-k> <Up>
-            inoremap <C-b> <Left>
-            inoremap <C-f> <Right>
+            inoremap <C-h> <Left>
+            inoremap <C-l> <Right>
             " Bash like
             inoremap <C-a> <Home>
             inoremap <C-e> <End>
             inoremap <C-d> <Delete>
             " Command mode shortcut
-            cnoremap <C-h> <BS>
             cnoremap <C-j> <Down>
             cnoremap <C-k> <Up>
-            cnoremap <C-b> <Left>
-            cnoremap <C-f> <Right>
+            cnoremap <C-h> <Left>
+            cnoremap <C-l> <Right>
             cnoremap <C-a> <Home>
             cnoremap <C-e> <End>
             cnoremap <C-d> <Delete>
