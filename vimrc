@@ -97,8 +97,8 @@ set splitbelow     " Puts new split windows to the bottom of the current
 set autowrite      " Automatically write a file when leaving a modified buffer
 set mousehide      " Hide the mouse cursor while typing
 set hidden         " Allow buffer switching without saving
-"set t_Co=256       " Use 256 colors
-set termguicolors  " enable true color
+set t_Co=256       " Use 256 colors
+"set termguicolors  " enable true color
 set ruler          " Show the ruler
 set showcmd        " Show partial commands in status line and Selected characters/lines in visual mode
 set showmode       " Show current mode in command-line
