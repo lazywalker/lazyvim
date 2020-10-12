@@ -8,8 +8,10 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 let mapleader = "\<Space>"
+"set guifont=Monaco:h16
+set guifont=YaHei-Consolas-Hybrid:h16
 
-" 对于markdown文件需要进行换行方便书写
+"对于markdown文件需要进行换行方便书写
 autocmd FileType markdown set wrap
 
 " Plug - Specify a directory for plugins
