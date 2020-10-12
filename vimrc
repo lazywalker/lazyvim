@@ -11,6 +11,16 @@ let mapleader = "\<Space>"
 "set guifont=Monaco:h16
 set guifont=YaHei-Consolas-Hybrid:h16
 
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 3
+let g:netrw_altv = 1
+let g:netrw_winsize = 15
+"augroup ProjectDrawer
+"    autocmd!
+"    autocmd VimEnter * :Vexplore
+"augroup END
+
 "对于markdown文件需要进行换行方便书写
 autocmd FileType markdown set wrap
 
