@@ -11,4 +11,3 @@ ln -s .vim/vimrc .vimrc
 vim +PlugClean +PlugUpdate +qa
 ```
 
-- Install YouCompleteMe https://github.com/ycm-core/YouCompleteMe#macos
