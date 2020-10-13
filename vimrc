@@ -101,6 +101,12 @@ inoremap <silent><expr> <TAB>
             \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+" end of coc settings.
+
 let NERDTreeShowHidden=1
 let g:vim_markdown_conceal_code_blocks = 0
 let g:ctrlsf_backend = "ag" "macOS: brew install ag / debian sudo apt install silversearcher-ag
