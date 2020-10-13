@@ -59,10 +59,10 @@ call plug#begin('~/.vim/plug')
     Plug 'airblade/vim-gitgutter'
     "Plug 'tpope/vim-fugitive' " 显示git branch
     Plug 'yggdroot/indentLine'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'scrooloose/nerdcommenter' " 代码注释
     "Plug 'SirVer/ultisnips' " 预定义模板
     "Plug 'honza/vim-snippets' " 模板库
-    Plug 'Valloric/YouCompleteMe' " 补全插件
     Plug 'alvan/vim-closetag' " html自动补全
     Plug 'lazywalker/auto-pairs' " 符号自动补全
     Plug 'godlygeek/tabular' " 按符号自动对齐如: Tab \= , : Tab \|
