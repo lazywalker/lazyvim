@@ -74,7 +74,7 @@ call plug#begin('~/.vim/plug')
     Plug 'dyng/ctrlsf.vim' " 全文搜索功能
     "Plug 'w0rp/ale' " 语法提示
     Plug 'vim-syntastic/syntastic' "语法提示
-    Plug 'rust-lang/rust.vim'
+    Plug 'rust-lang/rust.vim', { 'for': 'rust' }
     Plug 'majutsushi/tagbar' " tagbar显示文件大纲
     Plug 'morhetz/gruvbox' "gruv box colorscheme
 call plug#end()
