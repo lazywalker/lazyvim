@@ -72,7 +72,9 @@ call plug#begin('~/.vim/plug')
     Plug 'plasticboy/vim-markdown', { 'for':  'md' }
     Plug 'kien/ctrlp.vim' " CtrlP文件名搜索
     Plug 'dyng/ctrlsf.vim' " 全文搜索功能
-    Plug 'w0rp/ale' " 语法提示
+    "Plug 'w0rp/ale' " 语法提示
+    Plug 'vim-syntastic/syntastic' "语法提示
+    Plug 'rust-lang/rust.vim'
     Plug 'majutsushi/tagbar' " tagbar显示文件大纲
     Plug 'morhetz/gruvbox' "gruv box colorscheme
 call plug#end()
@@ -80,6 +82,10 @@ call plug#end()
 "
 "" statusline
 "
+"  (Lazy)  README.md[+] /home/mic/.vim [unix:utf-8:MARKDOWN]       18,5      50%
+"  +----+  +----------+ +------------+ +-------------------+       +--+      +-+
+"  1       2         3                 4                           5         6
+
 function Version ()
     return system("grep -o '^v[0-9\.]*' ~/.vim/version|tr -d '\n'")
 endfunction
@@ -108,10 +114,80 @@ function! s:check_back_space() abort
 endfunction
 " end of coc settings.
 
-let NERDTreeShowHidden=1
-let g:vim_markdown_conceal_code_blocks = 0
+"
+" syntastic settings
+"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"
+" rust.vim settings
+"
+let g:rustfmt_autosave = 1
+
+"
+" NERDTree
+"
+let g:NERDTreeDirArrowExpandable  = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+let g:NERDTreeShowHidden          = 1
+let g:NERDTreeBookmarksFile       = $HOME.'/.vim/.nerdbookmarks'
+let g:NERDTreeShowBookmarks       = 0
+let g:NERDTreeShowFiles           = 1
+let g:NERDTreeShowLineNumbers     = 0
+let g:NERDTreeWinSize             = 29
+let g:NERDTreeMinimalUI           = 0
+let g:NERDTreeDirArrows           = 1
+let g:NERDTreeIgnore              = [
+            \ '.*\.class',
+            \ '.*\.pyc',
+            \ '.*\.chm',
+            \ '.*\.ttf',
+            \ '.*\.lnk',
+            \ '.*\.cproj',
+            \ '.*\.exe',
+            \ '.*\.dll',
+            \ '.*\.out',
+            \ '.*\.files',
+            \ '.*\.zip',
+            \ '.*\.rar',
+            \ '.*\.gif',
+            \ '.git$',
+            \ '.DS_Store'
+            \ ]
+let g:NERDTreeIndicatorMapCustom = {
+            \ "Modified"  : "✹",
+            \ "Staged"    : "✚",
+            \ "Untracked" : "✭",
+            \ "Renamed"   : "➜",
+            \ "Unmerged"  : "═",
+            \ "Deleted"   : "✖",
+            \ "Dirty"     : "✗",
+            \ "Clean"     : "✔︎",
+            \ "Unknown"   : "?"
+            \ }
+
+"
+" ctrlp
+"
+" Making CtrlP.vim load 100x faster — A Tiny Piece of Vim — Medm
+" https://medium.com/a-tiny-piece-of-vim/making-ctrlp-vim-load-100x-faster-7a722fae7df6#.emcvo89nx
+let g:ctrlp_user_command = [
+            \ '.git/',
+            \ 'git --git-dir=%s/.git ls-files -oc --exclude-standard'
+            \ ]
+let g:ctrlp_match_window       = 'bottom,order:btt,min:5,max:5,results:10'
+let g:ctrlp_cmd                = 'CtrlPMixed'
+let g:ctrlp_mruf_default_order = 1
 let g:ctrlsf_backend = "ag" "macOS: brew install ag / debian: sudo apt install silversearcher-ag
+
+" tagbar 
+let g:tagbar_iconchars = ['+', '-']
 let g:tagbar_ctags_bin = "ctags" "macOS: brew install --HEAD universal-ctags/universal-ctags/universal-ctags / debian: apt install universal-ctags
+
+let g:vim_markdown_conceal_code_blocks = 0
 let g:indentLine_enabled = 1
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:AutoPairs = {'(':')', '[':']', '{':'}', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
