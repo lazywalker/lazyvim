@@ -305,6 +305,7 @@ endif
             nnoremap <silent> <Leader>q  :q<CR>
             nnoremap <silent> <Leader>Q  :qa!<CR>
             nnoremap <silent> <Leader>tr :NERDTreeToggle<CR>
+            nnoremap <silent> <Leader>tf :NERDTreeFind<CR>
             nnoremap <silent> <Leader>tg :GitGutterToggle<CR>
             " CtrlSF mapping
             nmap     <Leader>sf <Plug>CtrlSFPrompt
