@@ -110,10 +110,11 @@ endfunction
 
 let NERDTreeShowHidden=1
 let g:vim_markdown_conceal_code_blocks = 0
-let g:ctrlsf_backend = "ag" "macOS: brew install ag / debian sudo apt install silversearcher-ag
-let g:tagbar_ctags_bin = "ctags"
+let g:ctrlsf_backend = "ag" "macOS: brew install ag / debian: sudo apt install silversearcher-ag
+let g:tagbar_ctags_bin = "ctags" "macOS: brew install --HEAD universal-ctags/universal-ctags/universal-ctags / debian: apt install universal-ctags
 let g:indentLine_enabled = 1
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:AutoPairs = {'(':')', '[':']', '{':'}', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
 
 " Neovim has set these as default：
 if !has('nvim')
