@@ -187,6 +187,7 @@ let g:ctrlsf_backend = "ag" "macOS: brew install ag / debian: sudo apt install s
 let g:tagbar_iconchars = ['+', '-']
 let g:tagbar_ctags_bin = "ctags" "macOS: brew install --HEAD universal-ctags/universal-ctags/universal-ctags / debian: apt install universal-ctags
 
+let g:gitgutter_terminal_reports_focus=1
 let g:vim_markdown_conceal_code_blocks = 0
 let g:indentLine_enabled = 1
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
@@ -218,6 +219,7 @@ if !has('nvim')
     set ttymouse=xterm2
 endif
 
+set updatetime=1000 " 1000ms, default value is 4000
 set shortmess=atOI " No help Uganda information, and overwrite read messages to avoid PRESS ENTER prompts
 set ignorecase     " Case insensitive search
 set smartcase      " ... but case sensitive when uc present
