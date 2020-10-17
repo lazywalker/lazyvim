@@ -332,7 +332,7 @@ autocmd vimenter * colorscheme gruvbox
 set cursorline              " Highlight current line
 set fileformats=unix,dos,mac        " Use Unix as the standard file type
 set number                  " Line numbers on
-set relativenumber          " Relative numbers on
+"set relativenumber          " Relative numbers on
 set fillchars=stl:\ ,stlnc:\ ,fold:\ ,vert:│
 
 " Annoying temporary files
@@ -390,6 +390,10 @@ endif
             nnoremap <silent> <Leader>tsf :CtrlSFToggle<CR>
             nnoremap <silent> <Leader>te :call ToggleVExplorer()<CR>
             nnoremap <silent> <Leader>tb :Tagbar<CR>
+            " tab switching
+            nnoremap <silent> <Leader>tac  :tabnew<CR>
+            nnoremap <silent> <Leader>tan  :tabnext<CR>
+            nnoremap <silent> <Leader>tap  :tabprevious<CR>
 
             " Move half page faster
             nnoremap <Leader>d  <C-d>
