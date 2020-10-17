@@ -397,6 +397,9 @@ endif
             nnoremap <silent> <Leader>tac  :tabnew<CR>
             nnoremap <silent> <Leader>tan  :tabnext<CR>
             nnoremap <silent> <Leader>tap  :tabprevious<CR>
+            " auto paris
+            nnoremap <silent> <Leader>at :call AutoPairsToggle()<CR>'
+            nnoremap <silent> <Leader>aj :call AutoPairsJump()<CR>'
 
             " Move half page faster
             nnoremap <Leader>d  <C-d>
