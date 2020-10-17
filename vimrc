@@ -187,6 +187,9 @@ let g:ctrlsf_backend = "ag" "macOS: brew install ag / debian: sudo apt install s
 let g:tagbar_iconchars = ['+', '-']
 let g:tagbar_ctags_bin = "ctags" "macOS: brew install --HEAD universal-ctags/universal-ctags/universal-ctags / debian: apt install universal-ctags
 
+" nerdcommenter
+let g:NERDCustomDelimiters = { 'tt': { 'left': '#NOP '} }
+
 let g:gitgutter_terminal_reports_focus=1
 let g:vim_markdown_conceal_code_blocks = 0
 let g:indentLine_enabled = 1
