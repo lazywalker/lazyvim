@@ -1,6 +1,6 @@
-# lazyVIM
+# Lazy VIM
 
-![LazyVIM look&feel](https://pbs.twimg.com/media/EktTEvQU8AITVjP?format=jpg&name=4096x4096)
+<img src="https://pbs.twimg.com/media/EktTEvQU8AITVjP?format=jpg&name=4096x4096" width="600px">
 
 ## How to use
 
