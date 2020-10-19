@@ -1,0 +1,10 @@
+--langdef=tt
+--langmap=tt:.tin
+--regex-tt=/^[ \t]*#(config|CONFIG)[ \t]+\{?([_a-zA-Z][_a-zA-Z0-9]*)\}?/\2/C,config/
+--regex-tt=/^[ \t]*#(class|CLASS)[ \t]+\{?([_a-zA-Z][_a-zA-Z0-9]*)\}?[ \t]+(open|close|load|save|kill)/\2 \3/c,class/
+--regex-tt=/^[ \t]*#(func|function|FUNC|FUNCTION)[ \t]+\{?([_a-zA-Z][_a-zA-Z0-9]*)\}?/\2/f,function/
+--regex-tt=/^[ \t]*#(var|variable|VAR|VARIABLE)[ \t]+\{?([_a-zA-Z][_a-zA-Z0-9]*)\}?[ \t]/\2/v,variable/
+--regex-tt=/^[ \t]*#(tab|TAB)[ \t]+\{?([_a-zA-Z][_a-zA-Z0-9]*)\}?;?/\2/t,tab/
+--regex-tt=/^[ \t]*#(event|EVENT)[ \t]+\{?([_a-zA-Z][ _a-zA-Z0-9]*)\}?[ \t]/\2/e,event/
+--regex-tt=/^[ \t]*#(act|action|ACTION)[ \t]+\{?([^\}]+)\}?[ \t]+\{.*\}*/\2/a,action/
+--regex-tt=/^[ \t]*#(alias|ALIAS)[ \t]+\{?([_a-zA-Z][_a-zA-Z0-p9]*)\}?[ \t ]*/\2/A,alias/
