@@ -52,5 +52,5 @@ sudo apt install nodejs
 cd ~/
 mkdir ctags.d
 cd ctags.d
-ln -s .vim/ctags.d/tt.ctags .
+ln -s ~/.vim/ctags.d/tt.ctags .
 ```
