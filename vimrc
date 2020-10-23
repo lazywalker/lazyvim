@@ -77,6 +77,7 @@ call plug#begin('~/.vim/plug')
     Plug 'rust-lang/rust.vim', { 'for': 'rust' }
     Plug 'majutsushi/tagbar' " tagbar显示文件大纲
     Plug 'morhetz/gruvbox' "gruv box colorscheme
+    Plug 'lazywalker/vim-tintin'
 call plug#end()
 
 "
@@ -235,9 +236,7 @@ let g:ctrlsf_backend = "ag" "macOS: brew install ag / debian: sudo apt install s
 " tagbar 
 let g:tagbar_iconchars = ['+', '-']
 let g:tagbar_ctags_bin = "ctags" "macOS: brew install --HEAD universal-ctags/universal-ctags/universal-ctags / debian: apt install universal-ctags
-
-" nerdcommenter
-let g:NERDCustomDelimiters = { 'tt': { 'left': '#NOP '} }
+let g:tagbar_compact=1
 
 let g:gitgutter_terminal_reports_focus=1
 let g:vim_markdown_conceal_code_blocks = 0
