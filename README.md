@@ -46,3 +46,11 @@ brew install nodejs
 ```
 sudo apt install nodejs
 ```
+
+### (Optional for TinTin++) Configure ctags.d
+```
+cd ~/
+mkdir ctags.d
+cd ctags.d
+ln -s ~/.vim/ctags.d/tt.ctags .
+```
