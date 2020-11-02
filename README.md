@@ -50,7 +50,7 @@ sudo apt install nodejs
 ### (Optional for TinTin++/vim-tintin plugin) Configure ctags.d
 ```
 cd ~/
-mkdir ctags.d
-cd ctags.d
+mkdir .ctags.d
+cd .ctags.d
 ln -s ~/.vim/plug/vim-tintin/ctags.d/tt.ctags .
 ```
