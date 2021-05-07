@@ -58,7 +58,7 @@ call plug#begin('~/.vim/plug')
     Plug 'xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
     Plug 'airblade/vim-gitgutter'
     "Plug 'tpope/vim-fugitive' " 显示git branch
-    Plug 'yggdroot/indentLine'
+    "Plug 'yggdroot/indentLine'
     "Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'scrooloose/nerdcommenter' " 代码注释
     "Plug 'SirVer/ultisnips' " 预定义模板
