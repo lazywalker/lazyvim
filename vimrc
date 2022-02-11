@@ -8,8 +8,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 let mapleader = "\<Space>"
-"set guifont=Monaco:h16
-set guifont=YaHei-Consolas-Hybrid:h16
+set guifont=Monaco:h16
 
 " netrw settings
 let g:netrw_banner = 0
@@ -64,20 +63,20 @@ call plug#begin('~/.vim/plug')
     "Plug 'SirVer/ultisnips' " 预定义模板
     "Plug 'honza/vim-snippets' " 模板库
     Plug 'alvan/vim-closetag' " html自动补全
-    Plug 'lazywalker/auto-pairs' " 符号自动补全
-    Plug 'godlygeek/tabular' " 按符号自动对齐如: Tab \= , : Tab \|
+    "Plug 'lazywalker/auto-pairs' " 符号自动补全
+    "Plug 'godlygeek/tabular' " 按符号自动对齐如: Tab \= , : Tab \|
     "Plug 'iamcco/mathjax-support-for-mkdp' " mardown实时预览辅助插件
     "Plug 'iamcco/markdown-preview.vim' " mardown实时预览插件
     "Plug 'mzlogin/vim-markdown-toc', { 'for':  'md' }
-    Plug 'plasticboy/vim-markdown', { 'for':  'md' }
+    "Plug 'plasticboy/vim-markdown', { 'for':  'md' }
     Plug 'kien/ctrlp.vim' " CtrlP文件名搜索
     Plug 'dyng/ctrlsf.vim' " 全文搜索功能
     "Plug 'w0rp/ale' " 语法提示
     Plug 'vim-syntastic/syntastic' "语法提示
     "Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+    "Plug 'lazywalker/vim-tintin'
     Plug 'majutsushi/tagbar' " tagbar显示文件大纲
     Plug 'lifepillar/vim-gruvbox8' "gruv box colorscheme
-    "Plug 'lazywalker/vim-tintin'
 call plug#end()
 
 "
@@ -302,6 +301,9 @@ end
 
 " http://stackoverflow.com/questions/6427650/vim-in-tmux-background-color-changes-when-paging/15095377#15095377
 set t_ut=
+" https://github.com/vim-airline/vim-airline/issues/393#issuecomment-177191552
+"set term=builtin_ansi
+set t_RV=
 
 set winminheight=0
 set wildmode=list:longest,full
